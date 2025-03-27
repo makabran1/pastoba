@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>centre national de théâtre et du cinema chrétiens</title>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/lgoba.png" alt="Logo du cabinet">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Nos services</a></li>
+                
+                <li><a href="propos.html">À propos</a></li>
+                <li><a href="photo.html">PHOTOTEQUES</a>
+                    <ul>
+                        <li><a href="#photos">Photos</a></li>
+                        <li><a href="#videos">Vidéos</a></li>
+                    </ul>
+                </li>
+                <li><a href="cntact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Formulaire animé -->
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Contactez-nous</h2>
+            <form id="contact-form">
+
+                <form id="contact-form" action="email.php" method="POST">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Votre nom</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Votre email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="name" name="name" required>
+                        <label for="name">Votre numero</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Votre message</label>
+                    </div>
+                    <button type="submit">Envoyer</button>
+                </form>
+    </section>
+    <script>
+        // Menu mobile
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <!-- Script JavaScript -->
+    <script src="javascript/ctct.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>centre national de théâtre et du cinema chrétiens</title>
+    <meta name="description" content="Découvrez nos services de théâtre, danse et thérapie pour enfants autistes et en difficulté.">
+    <link rel="canonical" href="https://github.com/KOASSI/samuel.git" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/lgoba.png" alt="Logo du cabinet">
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Nos services</a></li>
+            
+                <li><a href="propos.html">À propos</a></li>
+                <li><a href="photo.html">PHOTOTEQUES</a>
+                    <ul>
+                        <li><a href="photo.html">Photos</a></li>
+                        <li><a href="#videos">Vidéos</a></li>
+                    </ul>
+                </li>
+                <li><a href="cntact.html">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h1>CENTRE NATIONAL DE THÉÂTRE  ET DE CINEMA CHRETIEN &THÉRAPIE</h1>
+        <p>
+            En 1959, est créé l'Institut national des Arts dont l'école d'art dramatique formera les 
+            premiers professionnels du théâtre en Côte d'Ivoire. Des pièces françaises constitueront 
+            au début le répertoire de la troupe de cette école, 
+            puis viendra le temps des représentations d'œuvres africaines, celles de Dadié.
+        </p>
+        <p> PASTEUR OBA SAMUEL, pasteur de l'église missionnaire baptiste, fondateur de l'ecole Saint Rebeca 
+            
+        </p>
+        <img src="images/acca.jpg" alt="Image de présentation" width="300">
+    </section>
+<h2>VENEZ INSCRIRE VOS ENFANTS, LE PROFESSIONALISTE C'EST CHEZ NOUS!</h2>
+    <main>
+        <!-- Section Vidéos -->
+        <section id="videos">
+            <h2>Vidéos des Activités</h2>
+
+            <h3>Spectacle</h3>
+            <video width="400" controls>
+                <source src="images/voba.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+
+            <h3>C'MIDI Monsieur OBA SAMUEL</h3>
+            <video width="400" controls>
+                <source src="images/vvoba.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+
+            <h3>Thérapie par le jeu</h3>
+            <video width="400" controls>
+                <source src="images/vvvoba.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </section>
+
+        <!-- Section Photos -->
+        <section id="">
+            <h2>Photos à Partager</h2>
+
+            <h3>Atelier de théâtre</h3>
+            <img src="images/WhatsApp Image 2025-03-14 à 15.59.52_d6b74ad5.jpg" alt="Atelier de théâtre" width="400">
+            <p>Initiation aux instruments de musique.</p>
+
+            <h3>Activité créative</h3>
+            <img src="images/WhatsApp Image 2025-03-14 à 15.59.53_ec2a4565.jpg" alt="Activité créative" width="400">
+            <p>Initiation aux instruments de musique.</p>
+
+            <h3>Thérapie par le jeu</h3>
+            <img src="images/WhatsApp Image 2025-03-14 à 15.59.54_63d1de55.jpg" alt="Thérapie par le jeu" width="400">
+            <p>Initiation à la danse.</p>
+
+            <h3>Spectacle des enfants</h3>
+            <img src="images/WhatsApp Image 2025-03-14 à 15.59.54_a00209d4.jpg" alt="Spectacle des enfants" width="400">
+            <p>Initiation à la danse .</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="images/lgoba.png" alt="Logo du cabinet" class="logo" style="width: 40%; height: 50px;">
+                <p>
+                    Pasteur OBA, professeur de théâtre, accompagne les enfants autistes, trisomie,
+                    bégaiement, trouble de langage et les infirmes moteurs.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li> Théâtre</li>
+                    <li>Danse</li>
+                    <li>Thérapie</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-media">
+                    <a href="https://web.facebook.com/CNTCCorga/?_rdc=1&_rdr#"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="https://x.com/"><img src="images/cross.png" alt="Twitter"></a>
+                    <a href="https://fr.linkedin.com/"><img src="images/linkedin.png" alt="LinkedIn"></a>
+                    <a href=""><img src="images/tik.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Flèche de défilement -->
+<div class="scroll-arrow" id="scrollArrow">
+    <button class="arrow-up" id="arrowUp">&#9650;</button> <!-- Flèche vers le haut -->
+    <button class="arrow-down" id="arrowDown">&#9660;</button> <!-- Flèche vers le bas -->
+</div>
+    <script>
+        // Menu mobile
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script src="javascript/j.js"></script>
+</body>
+</html>
