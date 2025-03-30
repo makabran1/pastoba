@@ -1,0 +1,14 @@
+# Composer dependencies
+/vendor/
+composer.lock
+
+# Environment files
+.env
+.env.local
+
+# Node modules (si tu ajoutes JS un jour)
+node_modules/
+
+# Fichiers système
+.DS_Store
+*.log

@@ -1,34 +1,37 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $message = htmlspecialchars($_POST['message']);
+    $mail = new PHPMailer(true);
 
-    // Adresse e-mail de destination
-    $to = "kouassikoffijeanpaul4@gmail.com";
+    try {
+        $mail->isSMTP();
+        $mail->Host = getenv('SMTP_HOST');
+        $mail->SMTPAuth = true;
+        $mail->Username = getenv('SMTP_USER');
+        $mail->Password = getenv('SMTP_PASS');
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
 
-    // Sujet de l'e-mail
-    $subject = "Nouveau message de contact de $name";
+        $name = htmlspecialchars($_POST['name']);
+        $email = htmlspecialchars($_POST['email']);
+        $phone = htmlspecialchars($_POST['phone']);
+        $message = htmlspecialchars($_POST['message']);
 
-    // Corps de l'e-mail
-    $email_content = "Nom: $name\n";
-    $email_content .= "Email: $email\n";
-    $email_content .= "Téléphone: $phone\n\n";
-    $email_content .= "Message:\n$message\n";
+        $mail->setFrom($email, $name);
+        $mail->addAddress("kouassikoffijeanpaul4@gmail.com");
 
-    // En-têtes de l'e-mail
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+        $mail->Subject = "Nouveau message de contact de $name";
+        $mail->Body = "Nom: $name\nEmail: $email\nTéléphone: $phone\n\nMessage:\n$message";
 
-    // Envoyer l'e-mail
-    if (mail($to, $subject, $email_content, $headers)) {
-        // Rediriger l'utilisateur vers une page de confirmation
+        $mail->send();
         header("Location: merci.html");
         exit();
-    } else {
-        echo "Une erreur s'est produite lors de l'envoi du message.";
+    } catch (Exception $e) {
+        echo "Erreur d'envoi: {$mail->ErrorInfo}";
     }
 } else {
     echo "Le formulaire n'a pas été soumis correctement.";

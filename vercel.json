@@ -1,14 +1,23 @@
 {
-    "version":2,
-    "builds": [
-        {
-  "src": "*.html",
-  "use": "@vercel/static"
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "email.php",
+      "use": "@vercel/php"
     }
   ],
-  
-  "routes": [{
-    "src": "/(.*)",
-    "dest": "/index.html"
-  }]
-  }
+  "routes": [
+    {
+      "src": "/email",
+      "dest": "/email.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
